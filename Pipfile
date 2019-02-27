@@ -11,6 +11,8 @@ django-widget-tweaks = "*"
 markdown = "*"
 python-decouple = "*"
 dj-database-url = "*"
+gunicorn = "*"
+psycopg2 = "*"
 
 [requires]
 python_version = "3.7"
