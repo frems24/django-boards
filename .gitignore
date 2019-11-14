@@ -3,6 +3,7 @@ __pycache__/
 db.sqlite3
 .DS_Store
 .env
+su.txt
 su_aapp.txt
 staticfiles/
 run/
