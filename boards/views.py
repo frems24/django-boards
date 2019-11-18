@@ -3,6 +3,7 @@ from django.views.generic import UpdateView, ListView
 from django.utils import timezone
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, reverse, redirect, get_object_or_404
 
 from boards.forms import NewTopicForm, PostForm
@@ -15,7 +16,7 @@ class BoardListView(ListView):
     template_name = 'home.html'
 
 
-class TopicListView(ListView):
+class TopicListView(LoginRequiredMixin, ListView):
     model = Topic
     context_object_name = 'topics'
     template_name = 'topics.html'
@@ -31,7 +32,7 @@ class TopicListView(ListView):
         return queryset
 
 
-class PostListView(ListView):
+class PostListView(LoginRequiredMixin, ListView):
     model = Post
     context_object_name = 'posts'
     template_name = 'topic_posts.html'
