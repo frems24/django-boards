@@ -36,7 +36,7 @@ class PostListView(LoginRequiredMixin, ListView):
     model = Post
     context_object_name = 'posts'
     template_name = 'topic_posts.html'
-    paginate_by = 2
+    paginate_by = 5
 
     def get_context_data(self, **kwargs):
         session_key = f'viewed_topic_{self.topic.pk}'
